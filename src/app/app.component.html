@@ -1,0 +1,192 @@
+<div id="app">
+  <div class="container-fluid">
+    <div class="row">
+      <div id="sidebar" class="col-md-5 bg-white">
+        <div class="d-flex align-items-stretch h-100">
+          <div class="sidebar-navbar flex-shrink-1 p-3">
+            <img src="../assets/images/logo.png" class="mb-3" />
+            <div class="item have-message active"><a href="#"><i class="icon-area-planning"></i></a></div>
+            <div class="item"><a href="#"><i class="icon-rout-planning"></i></a></div>
+            <div class="item"><a href="#"><i class="icon-resource-planning"></i></a></div>
+            <div class="item"><a href="#"><i class="icon-clients"></i></a></div>
+            <div class="item"><a href="#"><i class="icon-setting"></i></a></div>
+          </div>
+
+          <div class="sidebar-content  w-100">
+            <div class="sidebar-header">
+              <div class="row no-gutters p-3 align-items-center">
+                <div class="sidebar-header-title col-6">
+                  <div class="">Distribution Planner</div>
+                </div>
+                <div class="sidebar-header-search col-2">
+                  <button type="button" class="float-right btn btn-outline-primary mr-1 gray-border">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
+
+                <!--<button type="button" class="float-right btn-block btn btn-primary">Actions <i class="fas fa-angle-down"></i> </button>-->
+
+                <div class="sidebar-header-actions col-4" ngbDropdown placement="bottom-right">
+                  <button class="float-right btn-block btn btn-primary" id="dropdownBasic1" ngbDropdownToggle>Actions</button>
+                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button ngbDropdownItem><small><i class="fas fa-columns text-primary mr-2"></i></small> <span class="text-info">Manage Resources</span></button>
+                    <button ngbDropdownItem><small><i class="fas fa-redo-alt text-primary mr-2"></i></small>  <span class="text-info">Manage Resources</span></button>
+                    <button ngbDropdownItem><small><i class="fas fa-upload text-success mr-2"></i></small> <span class="text-info">submit Plan</span></button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="sidebar-body">
+              <div class="top-labels ml-3">
+                <span class="top-date label">Tomorrow, 12 Jul</span>
+                <span class="top-numbers label">2 Bicycles + 3 Cars</span>
+              </div>
+              <div class="main-content">
+                <div class="main-content-inner">
+
+                  <!-- Card by red text -->
+                  <div class="card mb-2">
+                    <div (click)="isCollapsed = !isCollapsed"
+                         [attr.aria-expanded]="!isCollapsed" class="card-header d-flex justify-content-between align-items-center">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link nav-link">
+                          <span class="text-danger">5 unplanned Packages</span>
+                        </button>
+                      </h5>
+                      <i class="fas fa-angle-down text-danger"></i>
+                    </div>
+
+                    <div class="collapse show" [ngbCollapse]="isCollapsed">
+                      <div class="card-body p-0">
+                        <div class="list-group">
+                          <article class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                              <p class="mb-1"><i class="text-primary fas fa-toolbox"> </i> <span class="font-weight-bold"> Mohsen Khazaei</span></p>
+                              <div class="user-buttons">
+                                <button type="button" class="mr-1 pt-0 pb-0 pr-3 pl-3 btn btn-sm btn-info"><small>Edit</small></button>
+                                <button type="button" class="pt-0 pb-0 pr-3 pl-3 btn btn-sm btn-info"><small>Details</small></button>
+                              </div>
+                            </div>
+                            <small class="d-block">012398019283901</small>
+                            <small>Charles Estourgiestraat 4 6522HW Nijmengen</small>
+                          </article>
+                          <article class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                              <p class="mb-1"><i class="text-primary fas fa-toolbox"> </i> <span class="font-weight-bold"> Mohsen Khazaei</span></p>
+                              <div class="user-buttons">
+                                <button type="button" class="mr-1 pt-0 pb-0 pr-3 pl-3 btn btn-sm btn-info"><small>Edit</small></button>
+                                <button type="button" class="pt-0 pb-0 pr-3 pl-3 btn btn-sm btn-info"><small>Details</small></button>
+                              </div>
+                            </div>
+                            <small class="d-block">012398019283901</small>
+                            <small>Charles Estourgiestraat 4 6522HW Nijmengen</small>
+                          </article>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card by colorful borders -->
+                  <div class="card card-with-border mb-2 red">
+                    <div class="card-header" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed">
+                      <div class="border"></div>
+                      <div class="titles d-flex justify-content-between align-items-center">
+                        <div>
+                          <div class="font-weight-bold">Area A</div>
+                          <small>16 Package</small>
+                        </div>
+                        <i class="arrow fas fa-angle-down"></i>
+                      </div>
+                    </div>
+
+                    <div class="collapse show" [ngbCollapse]="isCollapsed">
+                      <div class="card-body p-0">
+                        <div class="list-group">
+                          <article class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                              <p class="mb-1"><i class="text-primary fas fa-toolbox"> </i> <span class="font-weight-bold"> Mohsen Khazaei</span></p>
+                              <div class="user-buttons">
+                                <button type="button" class="mr-1 pt-0 pb-0 pr-3 pl-3 btn btn-sm btn-info"><small>Edit</small></button>
+                                <button type="button" class="pt-0 pb-0 pr-3 pl-3 btn btn-sm btn-info"><small>Details</small></button>
+                              </div>
+                            </div>
+                            <small class="d-block">012398019283901</small>
+                            <small>Charles Estourgiestraat 4 6522HW Nijmengen</small>
+                          </article>
+                          <article class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                              <p class="mb-1"><i class="text-primary fas fa-toolbox"> </i> <span class="font-weight-bold"> Mohsen Khazaei</span></p>
+                              <div class="user-buttons">
+                                <button type="button" class="mr-1 pt-0 pb-0 pr-3 pl-3 btn btn-sm btn-info"><small>Edit</small></button>
+                                <button type="button" class="pt-0 pb-0 pr-3 pl-3 btn btn-sm btn-info"><small>Details</small></button>
+                              </div>
+                            </div>
+                            <small class="d-block">012398019283901</small>
+                            <small>Charles Estourgiestraat 4 6522HW Nijmengen</small>
+                          </article>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card card-with-border green">
+                    <div class="card-header" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed">
+                      <div class="border"></div>
+                      <div class="titles d-flex justify-content-between align-items-center">
+                        <div>
+                          <div class="font-weight-bold">Area A</div>
+                          <small>16 Package</small>
+                        </div>
+                        <i class="fas fa-angle-down"></i>
+                      </div>
+                    </div>
+
+                    <div class="collapse show" [ngbCollapse]="isCollapsed">
+                      <div class="card-body p-0">
+                        <div class="list-group">
+                          <article class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                              <p class="mb-1"><i class="text-primary fas fa-toolbox"> </i> <span class="font-weight-bold"> Mohsen Khazaei</span></p>
+                              <div class="user-buttons">
+                                <button type="button" class="mr-1 pt-0 pb-0 pr-3 pl-3 btn btn-sm btn-info"><small>Edit</small></button>
+                                <button type="button" class="pt-0 pb-0 pr-3 pl-3 btn btn-sm btn-info"><small>Details</small></button>
+                              </div>
+                            </div>
+                            <small class="d-block">012398019283901</small>
+                            <small>Charles Estourgiestraat 4 6522HW Nijmengen</small>
+                          </article>
+                          <article class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                              <p class="mb-1"><i class="text-primary fas fa-toolbox"> </i> <span class="font-weight-bold"> Mohsen Khazaei</span></p>
+                              <div class="user-buttons">
+                                <button type="button" class="mr-1 pt-0 pb-0 pr-3 pl-3 btn btn-sm btn-info"><small>Edit</small></button>
+                                <button type="button" class="pt-0 pb-0 pr-3 pl-3 btn btn-sm btn-info"><small>Details</small></button>
+                              </div>
+                            </div>
+                            <small class="d-block">012398019283901</small>
+                            <small>Charles Estourgiestraat 4 6522HW Nijmengen</small>
+                          </article>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-7 ml-auto" id="google-maps">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7098.94326104394!2d78.0430654485247!3d27.172909818538997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1385710909804" width="600" height="450" frameborder="0" style="border:0"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
